@@ -138,7 +138,7 @@ namespace Microsoft.PowerPlatform.Dataverse.Client.Auth
                         .WithAuthority(Authority)
                         .WithLegacyCacheCompatibility(false)
                         .WithHttpClientFactory(new MSALHttpClientFactory())
-                        .WithLogging(MSALLoggerCallBack.Log);
+                        .WithLogging((level, message, pii) => MSALLoggerCallBack.Log(level, message, pii, logSink));
                     }
 
                     // initialization of memory cache if its not already initialized.
@@ -188,7 +188,7 @@ namespace Microsoft.PowerPlatform.Dataverse.Client.Auth
                             })
                         .WithAuthority(Authority)
                         .WithLegacyCacheCompatibility(false)
-                        .WithLogging(MSALLoggerCallBack.Log);
+                        .WithLogging((level, message, pii) => MSALLoggerCallBack.Log(level, message, pii, logSink));
 
                         pApp = cApp.Build();
 
