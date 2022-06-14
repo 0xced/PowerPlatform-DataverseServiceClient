@@ -20,6 +20,11 @@
   </ItemGroup>
   
   <ItemGroup>
+    <Reference Include="Microsoft.Xrm.Sdk" HintPath="$(NuGetPackageRoot)\microsoft.powerplatform.dataverse.client\1.1.9\lib\$(TargetFramework)\Microsoft.Xrm.Sdk.dll" />
+    <Reference Include="Microsoft.Crm.Sdk.Proxy" HintPath="$(NuGetPackageRoot)\microsoft.powerplatform.dataverse.client\1.1.9\lib\$(TargetFramework)\Microsoft.Crm.Sdk.Proxy.dll" />
+  </ItemGroup>
+  
+  <ItemGroup>
     <None Update="TestData\TestSolution_1_0_0_1.zip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
